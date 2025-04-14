@@ -1,50 +1,52 @@
-# Welcome to your Expo app 👋
+# TOEIC 学習アプリ
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+React Native と Expo で開発された TOEIC 学習アプリケーションです。特に Part5 の文法問題に焦点を当てています。
 
-## Get started
+## 機能
 
-1. Install dependencies
+- TOEIC Part5 形式の問題演習
+- 解答後の解説表示
+- 学習ガイドの閲覧
 
-   ```bash
-   npm install
-   ```
+## スクリーンショット
 
-2. Start the app
+- ホーム画面：問題一覧
+- 学習ガイド画面：Part5 の学習方法
 
-   ```bash
-    npx expo start
-   ```
+## 技術スタック
 
-In the output, you'll find options to open the app in a
+- React Native
+- Expo
+- TypeScript
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 実行方法
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1. リポジトリをクローン：
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+git clone <リポジトリURL>
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. 依存関係のインストール：
 
-## Learn more
+```
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+3. 開発サーバーの起動：
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```
+npm run ios     # iOSシミュレーターで実行
+npm run android # Androidエミュレーターで実行
+npm run web     # Webブラウザで実行
+```
 
-## Join the community
+## 今後の予定
 
-Join our community of developers creating universal apps.
+- Part6、Part7 の問題を追加
+- ユーザー認証と進捗保存機能
+- 苦手分野の分析と推奨問題の提示
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## ライセンス
+
+MIT

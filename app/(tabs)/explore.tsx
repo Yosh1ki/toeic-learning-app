@@ -1,109 +1,109 @@
-import { StyleSheet, Image, Platform } from 'react-native';
+import { StyleSheet } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { Feather } from "@expo/vector-icons";
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+import { ThemedText } from "@/components/ThemedText";
+import { ThemedView } from "@/components/ThemedView";
+import { ScrollView } from "react-native";
 
-export default function TabTwoScreen() {
+export default function ExploreScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Explore</ThemedText>
+    <ThemedView style={styles.container}>
+      <StatusBar style="auto" />
+      <ThemedView style={styles.header}>
+        <ThemedText type="title">TOEIC学習ガイド</ThemedText>
       </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
-        </ThemedText>
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Custom fonts">
-        <ThemedText>
-          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText> to see how to load{' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </ThemedText>
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user's current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText>{' '}
-          library to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
+
+      <ScrollView style={styles.scrollContainer}>
+        <ThemedView style={styles.section}>
+          <ThemedView style={styles.sectionHeader}>
+            <Feather name="book-open" size={24} color="#4169E1" />
+            <ThemedText type="subtitle" style={styles.sectionTitle}>
+              Part 5: 短文穴埋め問題
             </ThemedText>
-          ),
-        })}
-      </Collapsible>
-    </ParallaxScrollView>
+          </ThemedView>
+          <ThemedText style={styles.paragraph}>
+            Part
+            5では、短い文章の中の空欄に当てはまる適切な単語を選ぶ問題が出題されます。文法知識や語彙力が試されます。
+          </ThemedText>
+          <ThemedView style={styles.tips}>
+            <ThemedText type="defaultSemiBold">学習のコツ:</ThemedText>
+            <ThemedText>
+              • 品詞（名詞、動詞、形容詞など）の使い方を確認
+            </ThemedText>
+            <ThemedText>• 時制や態（能動態・受動態）に注意</ThemedText>
+            <ThemedText>• 前置詞の使い方を復習</ThemedText>
+            <ThemedText>• 接続詞と関係代名詞の用法を理解</ThemedText>
+          </ThemedView>
+        </ThemedView>
+
+        <ThemedView style={styles.section}>
+          <ThemedView style={styles.sectionHeader}>
+            <Feather name="clock" size={24} color="#4169E1" />
+            <ThemedText type="subtitle" style={styles.sectionTitle}>
+              学習計画
+            </ThemedText>
+          </ThemedView>
+          <ThemedText style={styles.paragraph}>
+            毎日10問ずつ解くことで、少しずつ実力が身につきます。間違えた問題は復習して、苦手な文法項目を特定しましょう。
+          </ThemedText>
+        </ThemedView>
+
+        <ThemedView style={styles.section}>
+          <ThemedView style={styles.sectionHeader}>
+            <Feather name="award" size={24} color="#4169E1" />
+            <ThemedText type="subtitle" style={styles.sectionTitle}>
+              点数目標
+            </ThemedText>
+          </ThemedView>
+          <ThemedText style={styles.paragraph}>
+            Part
+            5は30問で構成され、各問1点の配点です。25問以上正解することを目指しましょう。
+          </ThemedText>
+        </ThemedView>
+      </ScrollView>
+    </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+  container: {
+    flex: 1,
+    padding: 16,
   },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
+  header: {
+    marginBottom: 20,
+    alignItems: "center",
+  },
+  scrollContainer: {
+    flex: 1,
+  },
+  section: {
+    marginBottom: 24,
+    padding: 16,
+    borderRadius: 12,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  sectionHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 12,
+  },
+  sectionTitle: {
+    marginLeft: 8,
+  },
+  paragraph: {
+    lineHeight: 22,
+    marginBottom: 12,
+  },
+  tips: {
+    backgroundColor: "rgba(65, 105, 225, 0.1)",
+    padding: 12,
+    borderRadius: 8,
+    marginTop: 8,
   },
 });
