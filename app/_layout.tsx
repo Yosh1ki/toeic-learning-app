@@ -19,7 +19,6 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
-    Sriracha: require("../assets/fonts/Sriracha-Regular.ttf"),
   });
 
   useEffect(() => {

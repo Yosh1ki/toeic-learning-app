@@ -1,26 +1,27 @@
-import { StyleSheet, ScrollView, View } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import { QuestionCard } from "@/components/QuestionCard";
-import { part5Questions } from "@/data/part5Questions";
-import { Feather } from "@expo/vector-icons";
+import LearningTip from "@/components/LearningTip/LearningTip";
+import { ThemedIcon } from "@/components/ThemedIcon";
+import { Counter } from "@/components/Counter/Conter";
 
 export default function HomeScreen() {
   return (
-    <ThemedView style={styles.container} lightColor="white" darkColor="black">
+    <ThemedView style={styles.container}>
       <StatusBar style="auto" />
       <ScrollView style={styles.scrollContainer}>
-        <Feather name="bell" size={32} color="black" style={styles.bellicon} />
-        <View style={styles.shadowContainer}>
-          <ThemedText type="default" style={styles.text}>
-            💡1日5問でいいんだよ？
-          </ThemedText>
-        </View>
-        <View>
-          
-        </View>
+        <ThemedIcon name="bell" />
+        <LearningTip>1日5問でいいんだよ？</LearningTip>
+        <ThemedView style={styles.counters}>
+          <Counter count={0} caption={"回答済み"} />
+          <Counter count={0} caption={"連続日数"} />
+        </ThemedView>
+        <ThemedView style={styles.timeContainer}>
+          <ThemedText style={styles.paragraph}>残り時間</ThemedText>
+          <ThemedText style={[styles.paragraph, styles.time]}>10:24</ThemedText>
+        </ThemedView>
       </ScrollView>
     </ThemedView>
   );
@@ -38,27 +39,25 @@ const styles = StyleSheet.create({
   scrollContainer: {
     flex: 1,
   },
-  bellicon: {
-    textAlign: "right",
+  counters: {
+    flexDirection: "row",
+    gap: 30,
+    justifyContent: "center",
+    marginTop: 30,
   },
-  shadowContainer: {
-    maxWidth: 220,
-    alignSelf: "center",
-    padding: 10,
-    backgroundColor: "white",
-    borderRadius: 10,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.5,
-    shadowRadius: 4,
-    elevation: 5,
+  timeContainer: {
+    marginLeft: 10,
+    marginTop: 30,
+    flexDirection: "row",
   },
-  text: {
-    maxWidth: 200,
+  paragraph: {
+    fontWeight: "bold",
+    fontSize: 20,
   },
+  time: {
+    marginLeft: 20,
+  }
+
 });
 
 // {part5Questions.map((question) => (
