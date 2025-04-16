@@ -38,7 +38,7 @@ export default function RootLayout() {
           name="(tabs)"
           options={{
             headerShown: true,
-            headerTitle: "TOtify",
+            headerTitle: "TOEtify",
             headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
             headerStyle: {
               backgroundColor: colorScheme === "dark" ? "#121212" : "#FFFFFF",

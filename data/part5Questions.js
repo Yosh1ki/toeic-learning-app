@@ -10,7 +10,7 @@ export const part5Questions = [
       { id: "D", text: "to launch" },
     ],
     correctAnswer: "A",
-    explanation: "We need a base form verb after 'will' for future tense.",
+    explanation: "'will'の後には未来形の動詞の原形が必要です。",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const part5Questions = [
       { id: "D", text: "from" },
     ],
     correctAnswer: "B",
-    explanation: "The preposition 'by' is used to indicate a deadline.",
+    explanation: "前置詞'by'は期限を示すために使用されます。",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ export const part5Questions = [
       { id: "D", text: "significate" },
     ],
     correctAnswer: "C",
-    explanation: "We need an adverb to modify the adjective 'larger'.",
+    explanation: "形容詞'larger'を修飾するために副詞が必要です。",
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ export const part5Questions = [
     ],
     correctAnswer: "B",
     explanation:
-      "This is an imperative sentence, so we need the base form of the verb.",
+      "これは命令文なので、動詞の原形が必要です。",
   },
   {
     id: 5,
@@ -62,6 +62,6 @@ export const part5Questions = [
       { id: "D", text: "increase" },
     ],
     correctAnswer: "A",
-    explanation: "With 'have', we need the past participle form of the verb.",
+    explanation: "'have'と共に使用する場合は、動詞の過去分詞形が必要です。",
   },
 ];

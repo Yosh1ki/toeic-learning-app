@@ -5,7 +5,10 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import LearningTip from "@/components/LearningTip/LearningTip";
 import { ThemedIcon } from "@/components/ThemedIcon";
+import { QuestionCard } from "@/components/QuestionCard";
+import { part5Questions } from "@/data/part5Questions";
 import { Counter } from "@/components/Counter/Conter";
+import { DailyChallenge } from "@/components/DailyChallenge/DailyChallenge";
 
 export default function HomeScreen() {
   return (
@@ -21,6 +24,9 @@ export default function HomeScreen() {
         <ThemedView style={styles.timeContainer}>
           <ThemedText style={styles.paragraph}>残り時間</ThemedText>
           <ThemedText style={[styles.paragraph, styles.time]}>10:24</ThemedText>
+        </ThemedView>
+        <ThemedView style={styles.dailyChallengeContainer}>
+          <DailyChallenge />
         </ThemedView>
       </ScrollView>
     </ThemedView>
@@ -56,8 +62,11 @@ const styles = StyleSheet.create({
   },
   time: {
     marginLeft: 20,
-  }
-
+  },
+  dailyChallengeContainer: {
+    marginTop: 20,
+    marginLeft: 5,
+  },
 });
 
 // {part5Questions.map((question) => (
