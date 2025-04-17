@@ -18,8 +18,11 @@ export const styles = StyleSheet.create({
   date: {
     fontWeight: "bold",
     fontSize: 20,
+    color: "#000",
   },
   unanswered: {
+    fontWeight: "bold",
+    fontSize: 20,
     color: "#F31010",
     marginLeft: 10,
   },

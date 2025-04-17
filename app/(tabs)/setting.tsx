@@ -6,7 +6,7 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { ScrollView } from "react-native";
 
-export default function ExploreScreen() {
+export default function SettingScreen() {
   return (
     <ThemedView style={styles.container}>
       <StatusBar style="auto" />

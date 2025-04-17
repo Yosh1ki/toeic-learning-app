@@ -33,7 +33,7 @@ yarn-error.*
 .env*.local
 
 # Ignore local MCP config
-mcp.json
+.cursor/mcp.json
 
 # typescript
 *.tsbuildinfo

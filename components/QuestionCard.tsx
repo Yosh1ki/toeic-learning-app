@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { ThemedView } from "./ThemedView";
 import { ThemedText } from "./ThemedText";
+import { useDailyChallenge } from "@/app/daily-challenge/hooks";
 
 type Option = {
   id: string;
@@ -23,10 +24,12 @@ export const QuestionCard = ({
 }: QuestionCardProps) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
+  const { unansweredCount, setCount } = useDailyChallenge();
 
   const handleOptionSelect = (optionId: string) => {
     setSelectedOption(optionId);
     setShowExplanation(true);
+    setCount(unansweredCount - 1);
   };
 
   const isCorrect = selectedOption === correctAnswer;

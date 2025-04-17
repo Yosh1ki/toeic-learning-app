@@ -9,6 +9,8 @@ import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 import "react-native-reanimated";
+import { Provider } from "react-redux";
+import { store } from "@/store/store";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 
@@ -32,22 +34,28 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen
-          name="(tabs)"
-          options={{
-            headerShown: true,
-            headerTitle: "TOEtify",
-            headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
-            headerStyle: {
-              backgroundColor: colorScheme === "dark" ? "#121212" : "#FFFFFF",
-            },
+    <Provider store={store}>
+      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+        <Stack
+          screenOptions={{
+            headerBackTitle: "ホーム",
           }}
-        />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+        >
+          <Stack.Screen
+            name="(tabs)"
+            options={{
+              headerShown: true,
+              headerTitle: "TOEtify",
+              headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
+              headerStyle: {
+                backgroundColor: colorScheme === "dark" ? "#121212" : "#FFFFFF",
+              },
+            }}
+          />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+        <StatusBar style="auto" />
+      </ThemeProvider>
+    </Provider>
   );
 }
