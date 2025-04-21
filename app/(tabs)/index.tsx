@@ -7,7 +7,7 @@ import LearningTip from "@/components/LearningTip/LearningTip";
 import { ThemedIcon } from "@/components/ThemedIcon";
 import { Counter } from "@/components/Counter/Conter";
 import { DailyChallengeBox } from "@/components/DailyChallenge/DailyChallengeBox";
-import { useDailyChallenge } from "@/app/daily-challenge/hooks";
+import useDailyChallenge from "@/app/daily-challenge/hooks";
 import { styles } from "./HomeScreen/styles";
 import { useHomeScreen } from "./HomeScreen/hooks";
 

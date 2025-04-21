@@ -1,6 +1,6 @@
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
-import { styles } from "./styles";
+import styles from "./styles";
 import { Stack } from "expo-router";
 
 export default function AnswerHistoryScreen() {

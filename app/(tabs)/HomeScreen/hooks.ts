@@ -1,6 +1,6 @@
 import { useRouter } from "expo-router";
 
-export function useHomeScreen() {
+export const useHomeScreen = () => {
   const router = useRouter();
 
   const navigateToDailyChallenge = () => {
@@ -15,4 +15,4 @@ export function useHomeScreen() {
     navigateToDailyChallenge,
     navigateToAnswerHistory,
   };
-}
+};
