@@ -12,5 +12,6 @@ export interface Question {
   choices: string[];
   correct_answer: string;
   explanation: string;
+  is_answered?: boolean;
   created_at: string;
 }

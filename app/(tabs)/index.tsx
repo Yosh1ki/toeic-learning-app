@@ -19,7 +19,8 @@ export default function HomeScreen() {
     <ThemedView style={styles.container}>
       <StatusBar style="auto" />
       <ScrollView style={styles.scrollContainer}>
-        <ThemedIcon name="bell" />
+        {/* 今のところベルアイコンを非表示にする */}
+        {/* <ThemedIcon name="bell" /> */}
         <LearningTip>1日5問でいいんだよ？</LearningTip>
         <ThemedView style={styles.counters}>
           <Counter

@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     maxWidth: 220,
+    marginTop: 20,
     alignSelf: "center",
     padding: 10,
     backgroundColor: "white",
